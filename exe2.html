@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!--
+        Criar um Gerador de Senhas focando no JavaScript
+        Max - 50 caracteres
+        Min - 0 caracteres
+
+        ter botões ativando condições, como:
+            letra maiúscula
+            letra minúscula
+            símbolos
+            números
+    -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-devide-width, initial-sclae-1.0">
+        <title>Gerador de Senha</title>
+        <script src="Script/script2.js"></script>
+
+        <style>
+            #body{
+                text-align: center;
+                background-color: black;
+            }
+            .cabeca{
+                background-color: rgb(0, 14, 211);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 30px;
+                font-style: italic;
+                text-align: center;
+            }
+            .entrada{
+                color: azure;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+            .caixanum{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 15px;
+                width: 150px;
+            }
+            
+            .marcação{
+                color: azure;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+            .caixinha{
+                height: 12px;
+                width: 12px;
+                display: flex;
+                margin-left: 300px;
+            }
+
+            .Lbot{
+                width: 100%;
+                height: 30px;
+                text-align: center;
+            }
+            .botão{
+                width: 120px;
+                height: 25px;
+                padding: auto;
+            }
+            .final{
+                width: 100%;
+                background-color: black;
+            }
+
+            #resposta{
+               width: 450px;
+               height: 450px;
+               font-size: 15px;
+               font-family: Arial, Helvetica, sans-serif;
+               font-style: normal;
+            }
+        </style>
+    </head>
+    <body id="body">
+        <header>
+            <div class="cabeca">
+                <h2 id="h2">Marcos Arambasic - Gerador de senhas</h2>
+            </div>
+        </header>
+        <main>
+            <div class="entrada">
+                <label>Digite a quantidade de senhas que deseja</label>
+                <input class="caixanum" type="number" min="1" max="10" placeholder="Nº de senhas" id='nSenha'>
+                <br>
+                <label>Digite a quantidade de caracteres na senha deseja:</label>
+                <input class="caixanum" type="number" min="1" max="50" placeholder="Caracteres" id='nLength'>
+            </div>
+
+            <!-- 
+            checkbox = caixa de marcação
+            
+            formas de usar label:
+            <label><input><label>
+            ou    
+            <label for="idInput"><label>
+            <input id="IdInput">
+            -->
+            <br>
+            <div class="marcação">
+                <label for='maiusc'>Letras Maiúsculas (M,A,D,F,J,R,...)</label>
+                <input class="caixinha" type="checkbox" id='maiusc'>
+                <br>
+                <label for='minusc'>Letras Minúsculas (m,a,d,f,j,r,...)</label>
+                <input class="caixinha" type="checkbox" id='minusc'>
+                <br>
+                <label for='numer'>Números (1,2,3,4,5,...)</label>
+                <input class="caixinha" type="checkbox" id='numer'>
+                <br>
+                <label for='caracEspec'>Caracteres Especiais (#,@,$,%,&,...)</label>
+                <input class="caixinha" type="checkbox" id='caracEspec'>
+            </div>
+            <br>
+            <br>
+            <div class="Lbot">
+                <button class="botão" onclick="getPassword()">Gerar senha</button>
+                <button class="botão" onclick="getClean()">Limpar senha</button>
+            </div>
+            <br>
+            <br>
+            <div class="saida">
+                <textarea id='resposta' rows="6"></textarea>
+            </div>
+        </main>
+        
+          <footer>
+              <div class="final">
+
+              </div>
+          </footer>
+    </body>
+</html>
